@@ -32,20 +32,20 @@ end
 
 def create_peron
     puts "Create (P)olitician or (V)oter: "
-    type = gets.chomp
+    type = gets.chomp.upcase!
     puts "Enter your FIRST legal name: "
     fname = gets.chomp
     puts "Enter your LAST legal name: "
     lname = gets.chomp
     if (type == 'P')
         puts "(D)emocrat or (R)epublican"
-        party = gets.chomp
+        party = gets.chomp.upcase!
         Politician.new(fname, lname, party)
     elsif (type == "V")
         puts "(L)iberal, (C)onservative, (T)ea Party, (S)ocialist, or (N)eutral"
         aff = gets.chomp
         puts "Enter Your voter ID"
-        id = gets.chomp
+        id = gets.chomp.upcase!
         Voter.new(fname, lname, id, aff)
     else 
         raise "INVALID USER INPUT"

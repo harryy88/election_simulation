@@ -29,7 +29,7 @@ end
 
 def update_voter(i)
     puts "What is your NEW party? (L)iberal, (C)onservative, (T)ea Party, (S)ocialist, or (N)eutral"
-    n_party = gets.chomp
+    n_party = gets.chomp.upcase!
     Voter.voter_list[i][:affiliation] = n_party
     menu
 end
@@ -46,7 +46,7 @@ end
 
 def update_politician(i)
     puts "What is your NEW party? (D)emocrat or (R)epublican"
-    n_party = gets.chomp
+    n_party = gets.chomp.upcase!
     Politician.politician_list[i][:party] = n_party
     menu
 end
